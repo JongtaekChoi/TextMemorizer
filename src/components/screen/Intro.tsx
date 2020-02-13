@@ -23,14 +23,13 @@ const Container = styled.View`
 
 const ContentWrapper = styled.View`
   flex-direction: column;
-  height: 100%;
+  flex: 1;
   width: 100%;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
 `;
 
 const ButtonWrapper = styled.View`
-  position: absolute;
   flex-direction: column;
   bottom: 40px;
   width: 85%;
@@ -38,7 +37,7 @@ const ButtonWrapper = styled.View`
 `;
 
 const StyledText = styled.Text`
-  font-size: 18px;
+  font-size: 28px;
   line-height: 27px;
   color: ${({ theme }): string => theme.fontColor};
 `;
@@ -48,53 +47,19 @@ interface Props {
 }
 
 function Intro(props: Props): React.ReactElement {
-  let timer: number;
-  const { state: { user }, setUser } = useAppContext();
   const { changeThemeType } = useThemeContext();
-  const [isLoggingIn, setIsLoggingIn] = React.useState<boolean>(false);
-
-  const onLogin = (): void => {
-    setIsLoggingIn(true);
-    timer = setTimeout(() => {
-      const user: User = {
-        displayName: 'dooboolab',
-        age: 30,
-        job: 'developer',
-      };
-      setUser(user);
-      setIsLoggingIn(false);
-      clearTimeout(timer);
-    }, 1000);
-  };
 
   return (
     <Container>
       <ContentWrapper>
-        <StyledText
-          style={{
-            marginTop: 100,
-          }}
-        >
-          {user ? user.displayName : ''}
-        </StyledText>
-        <StyledText>{user ? user.age : ''}</StyledText>
-        <StyledText>{user ? user.job : ''}</StyledText>
+        <StyledText>Text Memorizer v1.0</StyledText>
       </ContentWrapper>
       <ButtonWrapper>
-        <Button
-          testID="btn-login"
-          imgLeftSrc={IC_MASK}
-          isLoading={isLoggingIn}
-          onClick={(): void => onLogin()}
-          text={getString('LOGIN')}
-        />
         <View style={{ marginTop: 8 }} />
         <Button
           testID="btn-navigate"
-          onClick={(): void => props.navigation.navigate('Temp', {
-            param: 'GO BACK',
-          })}
-          text={getString('NAVIGATE', { name: 'Temp' })}
+          onClick={(): void => props.navigation.navigate('TextList')}
+          text={getString('NAVIGATE', { name: 'TextList' })}
         />
         <View style={{ marginTop: 8 }} />
         <Button

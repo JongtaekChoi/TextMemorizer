@@ -197,9 +197,11 @@ exports[`[Stack] navigator should renders without crashing 1`] = `
                             Array [
                               Object {
                                 "alignItems": "center",
+                                "flexBasis": 0,
                                 "flexDirection": "column",
-                                "height": "100%",
-                                "justifyContent": "flex-start",
+                                "flexGrow": 1,
+                                "flexShrink": 1,
+                                "justifyContent": "center",
                                 "width": "100%",
                               },
                             ]
@@ -210,42 +212,13 @@ exports[`[Stack] navigator should renders without crashing 1`] = `
                               Array [
                                 Object {
                                   "color": "black",
-                                  "fontSize": 18,
-                                  "lineHeight": 27,
-                                },
-                                Object {
-                                  "marginTop": 100,
-                                },
-                              ]
-                            }
-                          >
-                            
-                          </Text>
-                          <Text
-                            style={
-                              Array [
-                                Object {
-                                  "color": "black",
-                                  "fontSize": 18,
+                                  "fontSize": 28,
                                   "lineHeight": 27,
                                 },
                               ]
                             }
                           >
-                            
-                          </Text>
-                          <Text
-                            style={
-                              Array [
-                                Object {
-                                  "color": "black",
-                                  "fontSize": 18,
-                                  "lineHeight": 27,
-                                },
-                              ]
-                            }
-                          >
-                            
+                            Text Memorizer v1.0
                           </Text>
                         </View>
                         <View
@@ -255,67 +228,11 @@ exports[`[Stack] navigator should renders without crashing 1`] = `
                                 "alignSelf": "center",
                                 "bottom": 40,
                                 "flexDirection": "column",
-                                "position": "absolute",
                                 "width": "85%",
                               },
                             ]
                           }
                         >
-                          <TouchableOpacity
-                            activeOpacity={0.5}
-                            testID="btn-login"
-                          >
-                            <View
-                              style={
-                                Array [
-                                  Object {
-                                    "alignItems": "center",
-                                    "alignSelf": "center",
-                                    "backgroundColor": "#069ccd",
-                                    "borderColor": "#069ccd",
-                                    "borderRadius": 4,
-                                    "borderWidth": 2,
-                                    "height": 52,
-                                    "justifyContent": "center",
-                                    "width": 320,
-                                  },
-                                ]
-                              }
-                            >
-                              <Image
-                                source={
-                                  Object {
-                                    "canInstrument": true,
-                                    "createTransformer": [Function],
-                                    "getCacheKey": [Function],
-                                    "process": [Function],
-                                  }
-                                }
-                                style={
-                                  Array [
-                                    Object {
-                                      "height": 24,
-                                      "left": 16,
-                                      "position": "absolute",
-                                      "width": 24,
-                                    },
-                                  ]
-                                }
-                              />
-                              <Text
-                                style={
-                                  Array [
-                                    Object {
-                                      "color": "white",
-                                      "fontSize": 14,
-                                    },
-                                  ]
-                                }
-                              >
-                                Login
-                              </Text>
-                            </View>
-                          </TouchableOpacity>
                           <View
                             style={
                               Object {
@@ -354,7 +271,7 @@ exports[`[Stack] navigator should renders without crashing 1`] = `
                                   ]
                                 }
                               >
-                                Navigate to Temp
+                                Navigate to TextList
                               </Text>
                             </View>
                           </TouchableOpacity>

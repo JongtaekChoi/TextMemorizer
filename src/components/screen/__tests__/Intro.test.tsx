@@ -32,53 +32,10 @@ describe('[Intro] screen rendering test', () => {
     expect(baseElement).toMatchSnapshot();
     expect(baseElement).toBeTruthy();
   });
-
-  it('should render [isLoading] status', () => {
-    props = createTestProps({
-      isLoading: true,
-    });
-    component = createTestElement(<Intro {...props} />, ThemeType.DARK);
-    testingLib = render(component);
-    const { baseElement } = testingLib;
-    expect(baseElement).toMatchSnapshot();
-    expect(baseElement).toBeTruthy();
-  });
-
-  it('should render [isDisabled] status', () => {
-    props = createTestProps({
-      isDisabled: true,
-    });
-    component = createTestElement(<Intro {...props} />, ThemeType.DARK);
-    testingLib = render(component);
-    const { baseElement } = testingLib;
-    expect(baseElement).toMatchSnapshot();
-    expect(baseElement).toBeTruthy();
-  });
 });
 
 describe('[Intro] Interaction', () => {
   let testingLib: RenderResult;
-  let rendered: renderer.ReactTestRenderer;
-  let root: renderer.ReactTestInstance;
-
-  it('should simulate login when button has clicked', () => {
-    testingLib = render(component);
-    rendered = renderer.create(component);
-    root = rendered.root;
-
-    jest.useFakeTimers();
-    const buttons = root.findAllByType(Button);
-
-    const button = testingLib.getByTestId('btn-login');
-    act(() => {
-      fireEvent.press(button);
-      expect(setTimeout).toHaveBeenCalledTimes(1);
-      jest.runAllTimers();
-    });
-
-    expect(clearTimeout).toHaveBeenCalledTimes(1);
-    expect(buttons[0].props.isLoading).toEqual(false);
-  });
 
   it('should navigate when button has clicked', () => {
     testingLib = render(component);
@@ -86,9 +43,7 @@ describe('[Intro] Interaction', () => {
     act(() => {
       fireEvent.press(testingLib.getByTestId('btn-navigate'), 'click');
     });
-    expect(props.navigation.navigate).toHaveBeenCalledWith('Temp', {
-      param: 'GO BACK',
-    });
+    expect(props.navigation.navigate).toHaveBeenCalledWith('TextList');
   });
 
   it('should change theme when button has clicked', () => {

@@ -3,13 +3,13 @@ import { StackNavigationProp, createStackNavigator } from '@react-navigation/sta
 import Intro from '../screen/Intro';
 import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
-import Temp from '../screen/Temp';
+import TextList from '../screen/TextList';
 import { useThemeContext } from '@dooboo-ui/native-theme';
 
 export type RootStackParamList = {
   default: undefined;
   Intro: undefined;
-  Temp: { param: string };
+  TextList: { param: string };
 }
 
 export type RootStackNavigationProps<
@@ -33,7 +33,7 @@ function RootNavigator(): React.ReactElement {
         }}
       >
         <Stack.Screen name="Intro" component={Intro} />
-        <Stack.Screen name="Temp" component={Temp} />
+        <Stack.Screen name="TextList" component={TextList} />
       </Stack.Navigator>
     </NavigationContainer>
   );
